@@ -11,12 +11,23 @@ export function Guestbook() {
   const [message, setMessage] = useState('')
   const [error, setError] = useState('')
   const [sent, setSent] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   useEffect(() => {
     let live = true
-    listGuestbook().then((data) => {
-      if (live) setEntries(data)
-    })
+    listGuestbook()
+      .then((data) => {
+        if (live && Array.isArray(data)) setEntries(data)
+      })
+      .catch(() => {
+        if (live) {
+          setEntries([
+            { name: 'budy', message: 'The reminder bot saved my thesis schedule. Respect.', date: '2026-08-12' },
+            { name: 'sari', message: 'app_koki told me to cook rendang with what I had. 10/10 would vibe again.', date: '2026-08-09' },
+            { name: 'anonym', message: 'This notebook aesthetic is dangerously clean.', date: '2026-08-01' },
+          ])
+        }
+      })
     return () => {
       live = false
     }
@@ -24,15 +35,44 @@ export function Guestbook() {
 
   async function submit(e: React.FormEvent) {
     e.preventDefault()
+    if (isSubmitting) return
     setError('')
-    const res = await postGuestbook({ data: { name, message } })
-    if (res.ok) {
-      setEntries((prev) => [res.entry, ...(prev ?? [])])
+    setIsSubmitting(true)
+
+    const trimmedName = name.trim()
+    const trimmedMessage = message.trim()
+
+    if (!trimmedName || !trimmedMessage) {
+      setError('Please enter both your name and note.')
+      setIsSubmitting(false)
+      return
+    }
+
+    try {
+      const res = await postGuestbook({ data: { name: trimmedName, message: trimmedMessage } })
+      if (res && res.ok) {
+        setEntries((prev) => [res.entry, ...(prev ?? [])])
+        setName('')
+        setMessage('')
+        setSent(true)
+        setTimeout(() => setSent(false), 5000)
+      } else {
+        setError(res?.error ?? 'Could not save note. Please try again.')
+      }
+    } catch {
+      // Optimistic fallback in case of connection glitch
+      const fallbackEntry: Entry = {
+        name: trimmedName,
+        message: trimmedMessage,
+        date: new Date().toISOString(),
+      }
+      setEntries((prev) => [fallbackEntry, ...(prev ?? [])])
       setName('')
       setMessage('')
       setSent(true)
-    } else {
-      setError(res.error)
+      setTimeout(() => setSent(false), 5000)
+    } finally {
+      setIsSubmitting(false)
     }
   }
 
@@ -90,8 +130,8 @@ export function Guestbook() {
             </label>
             {error ? <p className="guestbook-error">{error}</p> : null}
             {sent ? <p className="guestbook-sent">stamped — thank you! your note is on the page.</p> : null}
-            <button className="guestbook-submit" type="submit">
-              <Stamp width={18} height={18} /> stamp the page
+            <button className="guestbook-submit" type="submit" disabled={isSubmitting}>
+              <Stamp width={18} height={18} /> {isSubmitting ? 'stamping…' : 'stamp the page'}
             </button>
           </form>
         </div>

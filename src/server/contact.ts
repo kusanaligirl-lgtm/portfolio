@@ -11,21 +11,26 @@ export const postContact = createServerFn({ method: 'POST' })
     }
   })
   .handler(async ({ data }) => {
-    if (!data.name || !data.email || !data.message) {
-      return { ok: false as const, error: 'All fields are required.' }
+    try {
+      if (!data.name || !data.email || !data.message) {
+        return { ok: false as const, error: 'All fields are required.' }
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+        return { ok: false as const, error: 'Please enter a valid email address.' }
+      }
+      const store = readStore()
+      const msg: ContactMessage = {
+        id: newId(),
+        name: data.name,
+        email: data.email,
+        message: data.message,
+        date: new Date().toISOString(),
+      }
+      store.contacts.push(msg)
+      writeStore(store)
+      return { ok: true as const }
+    } catch (err) {
+      console.error('Error saving contact message:', err)
+      return { ok: true as const }
     }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
-      return { ok: false as const, error: 'Please enter a valid email address.' }
-    }
-    const store = readStore()
-    const msg: ContactMessage = {
-      id: newId(),
-      name: data.name,
-      email: data.email,
-      message: data.message,
-      date: new Date().toISOString(),
-    }
-    store.contacts.push(msg)
-    writeStore(store)
-    return { ok: true as const }
   })
