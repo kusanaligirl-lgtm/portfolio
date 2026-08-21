@@ -1,0 +1,41 @@
+.scrub-stage {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transition: opacity 250ms ease;
+  will-change: opacity;
+}
+
+.scrub-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: var(--color-ink);
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.scrub-vignette {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(22, 40, 31, 0.88) 0%, rgba(22, 40, 31, 0.68) 25%, rgba(22, 40, 31, 0.68) 75%, rgba(22, 40, 31, 0.94) 100%),
+    radial-gradient(ellipse 120% 90% at 50% 50%, rgba(22, 40, 31, 0.4) 0%, rgba(15, 26, 20, 0.85) 100%);
+}
+
+.scrub-content {
+  position: relative;
+  z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scrub-video {
+    object-fit: cover;
+    background-size: cover;
+  }
+}

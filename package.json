@@ -1,0 +1,35 @@
+{
+    "name": "kusana-porto",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite dev",
+        "build": "vite build",
+        "start": "node .output/server/index.mjs",
+        "generate": "tsr generate",
+        "typecheck": "tsc --noEmit"
+    },
+    "dependencies": {
+        "@radix-ui/react-slot": "^1.3.3",
+        "@tanstack/react-router": "^1.170.31",
+        "@tanstack/react-start": "^1.168.48",
+        "class-variance-authority": "^0.7.1",
+        "framer-motion": "^13.1.1",
+        "gsap": "^3.15.0",
+        "lenis": "^1.3.26",
+        "nitro": "^3.0.260610-beta",
+        "react": "^19.2.8",
+        "react-dom": "^19.2.8"
+    },
+    "devDependencies": {
+        "@tailwindcss/vite": "^4.3.3",
+        "@tanstack/router-plugin": "^1.168.34",
+        "@types/node": "^24.0.0",
+        "@types/react": "^19.0.0",
+        "@types/react-dom": "^19.0.0",
+        "@vitejs/plugin-react": "^5.0.0",
+        "tailwindcss": "^4.3.3",
+        "typescript": "^5.9.0",
+        "vite": "^7.0.0"
+    }
+}

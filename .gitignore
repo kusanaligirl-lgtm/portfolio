@@ -1,0 +1,12 @@
+node_modules
+.output
+dist
+.nitro
+.vinxi
+*.log
+.DS_Store
+.porto.db
+*.db
+.env
+.env.local
+.env.*.local

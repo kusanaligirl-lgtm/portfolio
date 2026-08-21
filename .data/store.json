@@ -1,0 +1,138 @@
+{
+  "entries": [
+    {
+      "id": "seed-1",
+      "name": "budy",
+      "message": "The reminder bot saved my thesis schedule. Respect.",
+      "date": "2026-08-12"
+    },
+    {
+      "id": "seed-2",
+      "name": "sari",
+      "message": "app_koki told me to cook rendang with what I had. 10/10 would vibe again.",
+      "date": "2026-08-09"
+    },
+    {
+      "id": "seed-3",
+      "name": "anonym",
+      "message": "This notebook aesthetic is dangerously clean.",
+      "date": "2026-08-01"
+    },
+    {
+      "id": "mt1jo9x9-25drwt",
+      "name": "ace anthem",
+      "message": "keren bangetttt woilah cikk",
+      "date": "2026-08-20T13:16:49.341Z"
+    }
+  ],
+  "contacts": [
+    {
+      "id": "mt1j0y44-jf7ltp",
+      "name": "ace anthem",
+      "email": "kacauhero@gmail.com",
+      "message": "keren banget woilaj cikkk",
+      "date": "2026-08-20T12:58:40.948Z"
+    },
+    {
+      "id": "mt1jnfho-oqk6bi",
+      "name": "ace anthem",
+      "email": "kacauhero@gmail.com",
+      "message": "keren banget woilahhh cik",
+      "date": "2026-08-20T13:16:09.900Z"
+    }
+  ],
+  "visits": 55,
+  "repos": {
+    "repos": [
+      {
+        "name": "invoice-generator",
+        "description": "Aplikasi Invoice Generator sederhana — vanilla HTML/CSS/JS + jsPDF. Buat invoice, preview real-time, ekspor PDF, riwayat tersimpan di localStorage.",
+        "language": "JavaScript",
+        "stars": 0,
+        "updatedAt": "2026-08-10T15:14:28Z",
+        "url": "https://github.com/kusanaligirl-lgtm/invoice-generator"
+      },
+      {
+        "name": "Expense-Tracker",
+        "description": "Catat Uang — pencatat pengeluaran harian: kategori, filter tanggal, dan grafik tren bulanan dengan Chart.js. Vanilla JS + localStorage, tanpa framework.",
+        "language": "JavaScript",
+        "stars": 1,
+        "updatedAt": "2026-08-10T14:29:11Z",
+        "url": "https://github.com/kusanaligirl-lgtm/Expense-Tracker"
+      },
+      {
+        "name": "app_koki",
+        "description": "Aplikasi rekomendasi resep masakan berbasis AI — deteksi bahan makanan pakai model YOLO dan rekomendasi resep dari database. Python + Flask.",
+        "language": "Python",
+        "stars": 1,
+        "updatedAt": "2026-08-10T14:29:10Z",
+        "url": "https://github.com/kusanaligirl-lgtm/app_koki"
+      },
+      {
+        "name": "web-deret",
+        "description": "Aplikasi web penghitung deret bilangan — HTML, CSS, dan JavaScript murni, ringan dan cepat.",
+        "language": "JavaScript",
+        "stars": 0,
+        "updatedAt": "2026-08-10T14:29:08Z",
+        "url": "https://github.com/kusanaligirl-lgtm/web-deret"
+      },
+      {
+        "name": "kalkulator-DA",
+        "description": "Kalkulator deret aritmatika berbasis web dengan backend Python — latihan integrasi frontend + backend.",
+        "language": "CSS",
+        "stars": 0,
+        "updatedAt": "2026-08-10T14:29:08Z",
+        "url": "https://github.com/kusanaligirl-lgtm/kalkulator-DA"
+      },
+      {
+        "name": "traffic-monitoring-pontianak",
+        "description": "Sistem monitoring lalu lintas Kota Pontianak — full-stack (backend + frontend) siap deploy dengan Docker Compose.",
+        "language": "JavaScript",
+        "stars": 1,
+        "updatedAt": "2026-08-10T14:29:05Z",
+        "url": "https://github.com/kusanaligirl-lgtm/traffic-monitoring-pontianak"
+      },
+      {
+        "name": "belajar-vibe-coding",
+        "description": "Repo belajar vibe coding — eksperimen cepat dengan Bun + TypeScript untuk mengulik ide seru.",
+        "language": "TypeScript",
+        "stars": 0,
+        "updatedAt": "2026-08-10T14:29:04Z",
+        "url": "https://github.com/kusanaligirl-lgtm/belajar-vibe-coding"
+      },
+      {
+        "name": "perpus",
+        "description": "Sistem informasi perpustakaan sederhana — manajemen data buku dan peminjaman.",
+        "language": null,
+        "stars": 0,
+        "updatedAt": "2026-08-10T14:29:03Z",
+        "url": "https://github.com/kusanaligirl-lgtm/perpus"
+      },
+      {
+        "name": "AritmaHub",
+        "description": "Kalkulator cerdas deret aritmatika, geometri, dan pangkat bilangan — desain Neobrutalisme yang interaktif dan edukatif.",
+        "language": "TypeScript",
+        "stars": 1,
+        "updatedAt": "2026-08-10T14:29:02Z",
+        "url": "https://github.com/kusanaligirl-lgtm/AritmaHub"
+      },
+      {
+        "name": "reminder-bot",
+        "description": "Bot Telegram pengingat cerdas — ketik /remind 30m minum air dan bot ingatkan kamu tepat waktu. Dukung waktu relatif & spesifik, list, cancel, dan penyimpanan data otomatis. Python + pyTelegramBotAPI",
+        "language": "Python",
+        "stars": 1,
+        "updatedAt": "2026-08-10T14:25:58Z",
+        "url": "https://github.com/kusanaligirl-lgtm/reminder-bot"
+      },
+      {
+        "name": "kusanaligirl-lgtm",
+        "description": null,
+        "language": null,
+        "stars": 1,
+        "updatedAt": "2026-08-09T17:37:37Z",
+        "url": "https://github.com/kusanaligirl-lgtm/kusanaligirl-lgtm"
+      }
+    ],
+    "fetchedAt": 1787281975014
+  }
+}
